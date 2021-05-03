@@ -1,7 +1,8 @@
 const app = new Vue({
     el:'#app',
     data: {
-        email:'',
+        email:[],
+        tmp:[],
     },
     created(){
         //axios.get('http://casaalmada.hostinggratis.it/API/?nome=gigi&cognome=Rossi') 
@@ -24,20 +25,26 @@ const app = new Vue({
         // always executed
 
         });*/
-        for (let i=0;i<10;i++)
-        this.call();
+        for (let i=0;i<10;i++){
+            
+            this.call();
+        }
+        ;
+        console.log(this.tmp);
+        this.email = this.tmp;
 
-        
     },
     methods:{
         call : function(){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+           axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
          .then((response) => {
          // handle success
             /*for ( i in response.data )
              console.log(i+": "+response.data[i]);*/
-             console.log(response.data);
-             this.email = response.data.response;
+             console.log(response.data.response);
+             
+              this.tmp.push(response.data.response);
+              console.log(this.tmp);
         })
         .catch(function (error) {
         // handle error
