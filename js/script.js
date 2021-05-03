@@ -36,7 +36,7 @@ const app = new Vue({
     },
     methods:{
         call : function(){
-           axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+           axios.get('http://casaalmada.hostinggratis.it/API/?nome=gigi&cognome=Rossi')
          .then((response) => {
          // handle success
             /*for ( i in response.data )
