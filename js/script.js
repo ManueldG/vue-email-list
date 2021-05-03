@@ -26,10 +26,9 @@ const app = new Vue({
 
         });*/
         for (let i=0;i<10;i++){
-            
             this.call();
-        }
-        ;
+        };
+
         console.log(this.tmp);
         this.email = this.tmp;
 
@@ -41,10 +40,10 @@ const app = new Vue({
          // handle success
             /*for ( i in response.data )
              console.log(i+": "+response.data[i]);*/
-             console.log(response.data.response);
+            console.log(response.data.response);
              
-              this.tmp.push(response.data.response);
-              console.log(this.tmp);
+            this.tmp.push(response.data.response);
+            console.log(this.tmp);
         })
         .catch(function (error) {
         // handle error
